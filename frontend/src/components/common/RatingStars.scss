@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.rating-stars-container {
+  display: flex;
+  align-items: center;
+}
+
+.star {
+  font-size: 16px;
+  color: var(--light-gray);
+
+  margin: 0 1px;
+  
+  &.filled {
+    color: var(--color-accent);
+  }
+  
+  &.half-filled {
+    // 半分の星のスタイル
+    // こちらは複雑になるため、通常は背景画像や擬似要素で表現します
+    // 例として、全星と同じ色にしつつ、半分の表示にする工夫が必要です。
+    // 今回はシンプルに、filledと区別するクラスとしておきます。
+    color: var(--color-accent); 
+  }
+}

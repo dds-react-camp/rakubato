@@ -1,0 +1,155 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.type-card {
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  padding: 4px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background: linear-gradient(to right, #57d1aa, #afcd37);
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .type-card-content {
+    background-color: var(--bg-white);
+    border-radius: 12px;
+  }
+
+  .card-image-container {
+    @include flex-center;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+    padding: 30px;
+  }
+  
+  .card-image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .card-bottom {
+    @include flex-between;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .product-info {
+    @include flex-center;
+    flex-direction: column;
+    padding: 10px;
+
+    .product-name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      color: var(--dark-gray);
+      margin-top: 8px;
+      padding: 0 15px;
+    }
+  }
+
+  .characteristics {
+    .characteristics-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      .characteristic-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+
+        .characteristics-text {
+          margin: 0;
+          font-size: 14px;
+        }
+        .check-mark {
+          margin-right: 5px;
+        }
+      }
+
+    }
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    gap: 100px;
+  }
+
+  .next-button,
+  .like-button {
+    @include flex-center;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid;
+    background: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+
+    .material-symbols-outlined {
+      font-size: 32px;
+    }
+
+    &:hover {
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .next-button {
+    background-color: #fce4e4;
+    border-color: #f44336;
+    color: #f44336;
+
+    &:hover {
+      background-color: #f44336;
+      color: white;
+    }
+  }
+
+  .like-button {
+    background-color: #e8f5e9;
+    border-color: #4CAF50;
+    color: #4CAF50;
+
+    &:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+  }
+}

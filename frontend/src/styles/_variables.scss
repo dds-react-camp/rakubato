@@ -1,0 +1,60 @@
+/* Fresh & Joy Color Palette */
+:root {
+  --color-primary: #39b1c5;           /* Main Accent 1 (Turquoise) */
+  --color-primary-hover: #00A9A3;     /* Main Accent 2 (Deep Turquoise) */
+  --color-secondary: #FFD700;         /* Sub Accent 1 (Gold) */
+  --color-accent: #FFC300;            /* Sub Accent 2 (Rich Gold) */
+  --color-success: #00C6C2;           /* Success Color (Turquoise) */
+  --color-warning: #FFD700;           /* Warning Color (Gold) */
+  --color-discovery: #E0F7FA;         /* Discovery Joy (Light Turquoise) */
+  --color-excitement: #FFF8E1;        /* Excitement (Light Gold) */
+  --gradient-gaming: linear-gradient(
+        135deg,
+        #14f9d5,
+        #6246ea,
+        #e45982,
+        #14f9d5
+      );;
+
+  /* Backgrounds */
+  --bg-primary: #F4F6F9;
+  --bg-secondary: linear-gradient(135deg, #F4F6F9 0%, #EBF0F5 100%);
+  --bg-card: linear-gradient(135deg, #ffffff 0%, #F4F6F9 100%);
+  --bg-accent: linear-gradient(135deg, #E0F7FA 0%, #FFF8E1 100%);
+  --bg-lightgray: rgba(231, 231, 231, 0.85);
+  --bg-white: rgba(255, 255, 255, 1);
+
+  /* Text */
+  --text-primary: #2C3E50;
+  --text-secondary: #4A647A;
+  --text-accent: #00A9A3;
+  --text-light: #718096;
+
+  /* Interaction */
+  --shadow-excitement: 0 8px 32px rgba(0, 198, 194, 0.3);
+  --shadow-discovery: 0 8px 32px rgba(255, 215, 0, 0.4);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 12px 40px rgba(0, 198, 194, 0.2);
+
+  /* Layout */
+  --border-radius: 1.5rem;
+  --border-radius-lg: 2rem;
+
+  /* Animation */
+  --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* 汎用 */
+  --light-gray: #d3d3d3;
+  --dark-gray: #424242;
+}
+
+$bp-mobile: 640px;
+$bp-tablet: 768px;
+$bp-desktop: 1024px;
+
+// HeartButton
+$heart-red: #ff3232ff;
+$heart-gray: #d3d3d3;
+

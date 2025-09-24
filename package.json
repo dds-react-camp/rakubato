@@ -1,0 +1,7 @@
+{
+  "name": "ai-product-search-app-monorepo",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ]
+}

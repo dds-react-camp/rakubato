@@ -1,0 +1,37 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/backend', './backend']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/backend']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: 
+    - 'run' 
+    - 'deploy' 
+    - 'backend' 
+    - '--image' 
+    - 'gcr.io/$PROJECT_ID/backend' 
+    - '--region' 
+    - '$_REGION' 
+    - '--platform' 
+    - 'managed' 
+    - '--allow-unauthenticated'
+    - '--service-account'
+    - '$_CLOUD_RUN_SERVICE_ACCOUNT'
+    - '--set-env-vars'
+    - 'ENVIRONMENT=production,VERTEX_AI_MOCK=false,BASIC_AUTH_USERNAME=$_BASIC_AUTH_USERNAME,BASIC_AUTH_PASSWORD=$_BASIC_AUTH_PASSWORD,GCP_PROJECT_ID=$PROJECT_ID,GCP_REGION=$_REGION,GCP_IAM_SERVICE_ACCOUNT_EMAIL=$_GCP_IAM_SERVICE_ACCOUNT_EMAIL,YOUTUBE_API_KEY=$_YOUTUBE_API_KEY,GCS_BUCKET_NAME=$_GCS_BUCKET_NAME,VERTEX_AI_MODEL_NAME=$_VERTEX_AI_MODEL_NAME,VERTEX_AI_MODEL_REGION=$_VERTEX_AI_MODEL_REGION,VIDEO_ANALYSIS_START_OFFSET=$_VIDEO_ANALYSIS_START_OFFSET,VIDEO_ANALYSIS_END_OFFSET=$_VIDEO_ANALYSIS_END_OFFSET,VEO_MODEL_NAME=$_VEO_MODEL_NAME'
+- name: 'gcr.io/cloud-builders/docker'
+  args: 
+    - 'build'
+    - '-t'
+    - 'gcr.io/$PROJECT_ID/frontend'
+    - './frontend'
+    - '--build-arg'
+    - 'VITE_API_URL=$_API_URL'
+    - '--build-arg'
+    - 'VITE_BASIC_AUTH_USERNAME=$_BASIC_AUTH_USERNAME'
+    - '--build-arg'
+    - 'VITE_BASIC_AUTH_PASSWORD=$_BASIC_AUTH_PASSWORD'
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/frontend']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'frontend', '--image', 'gcr.io/$PROJECT_ID/frontend', '--region', '$_REGION', '--platform', 'managed', '--allow-unauthenticated']

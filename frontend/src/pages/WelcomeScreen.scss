@@ -1,0 +1,87 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 98vh;
+}
+
+.main-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-top: 64px;
+}
+
+.welcome-screen {
+  background: linear-gradient(to bottom, hsl(207, 87%, 89%), hsl(207, 1%, 84%));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.character-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.character-image {
+  width: 250px;
+  height: auto;
+}
+
+.welcome-message {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+  font-weight: bold;
+}
+
+.search-section {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.main-buttons-section {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.button-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #555;
+}
+
+.button-icon-circle {
+  background-color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #03a9f4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+
+  &:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: var(--shadow-hover);
+    filter: brightness(1.1);
+  }
+}

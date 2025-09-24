@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: builder
+    command: npm run dev -- --host 0.0.0.0
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+
+  backend:
+    command: python -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    env_file:
+      - ./.devcontainer/.env
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/.devcontainer/local-gcp-creds.json
+    volumes:
+      - ./.devcontainer/local-gcp-creds.json:/app/.devcontainer/local-gcp-creds.json:ro

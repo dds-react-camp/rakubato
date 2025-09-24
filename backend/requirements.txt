@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+httpx
+pytest
+google-api-python-client
+google-cloud-storage
+google-auth
+google-generativeai
+google-genai
+
+# For Vertex AI features. Use --pre to get the latest preview features
+google-cloud-aiplatform>=1.55.0

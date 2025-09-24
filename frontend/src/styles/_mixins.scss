@@ -1,0 +1,56 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-left {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+@mixin flex-right {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+@mixin card-base {
+  background: var(--bg-card);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem;
+  transition: var(--transition-bounce);
+  border: 2px solid transparent;
+
+  &:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-secondary);
+  }
+}
+
+@mixin button-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  color: white;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  transition: var(--transition-bounce);
+  box-shadow: var(--shadow-excitement);
+  cursor: pointer;
+
+  &:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: var(--shadow-hover);
+      filter: brightness(1.1);
+  }
+}

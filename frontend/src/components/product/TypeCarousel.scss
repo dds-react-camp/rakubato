@@ -1,0 +1,40 @@
+.typecarousel-content {
+  margin-top: 20px;
+  width: 95%;
+}
+
+.type-carousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-indicator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--light-gray);
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+  
+  // アクティブなドット
+  &.active {
+    background-color: var(--color-primary-hover);
+  }
+}

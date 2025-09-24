@@ -1,0 +1,40 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.toggle-container {
+  display: flex;
+  background-color: var(--bg-lightgray);
+  border-radius: 8px;
+  padding: 4px;
+  font-family: Arial, sans-serif;
+
+  .toggle-btn {
+    @include flex-center;
+    padding: 8px 16px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 6px;
+    white-space: nowrap;
+    
+    .material-symbols-outlined {
+      margin-right: 4px;
+      font-size: 20px;
+    }
+    
+    .btn-text {
+      font-weight: 500;
+    }
+
+    &:hover {
+      background-color: var(--light-gray);
+    }
+
+    &.active {
+      background-color: var(--color-primary);
+      color: var(--color-discovery);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

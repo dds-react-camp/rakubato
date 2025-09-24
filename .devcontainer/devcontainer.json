@@ -1,0 +1,27 @@
+{
+  "name": "AI Product Search App",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+    "../docker-compose.dev.container.yml"
+  ],
+  "service": "frontend",
+  "workspaceFolder": "/app",
+  "forwardPorts": [
+    5173,
+    8000
+  ],
+  "postCreateCommand": "npm install && if [ ! -f frontend/.env ]; then echo 'Creating .env file for frontend...'; echo 'VITE_BASIC_AUTH_USERNAME=dds-react-camp' > frontend/.env; echo 'VITE_BASIC_AUTH_PASSWORD=your_dev_password' >> frontend/.env; fi",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker",
+        "github.vscode-github-actions",
+        "visualstudioexptteam.vscodeintellicode"
+      ]
+    }
+  }
+}

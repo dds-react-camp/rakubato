@@ -1,0 +1,51 @@
+@import '../../styles/variables';
+
+.floating-assistant-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-excitement);
+  transition: var(--transition-bounce);
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
+
+  &:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: var(--shadow-hover);
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  .assistant-icon {
+    width: 70px;
+    height: 70px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .assistant-icon {
+      transform: rotate(-15deg);
+  }
+
+  &.image-error {
+    background-image: none; // Hide background if image fails
+  }
+
+  .fallback-text {
+    font-size: 1.5rem;
+  }
+}

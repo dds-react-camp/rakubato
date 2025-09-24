@@ -1,0 +1,14 @@
+.product-grid {
+  display: grid;
+  gap: 15px;
+  place-items: center;
+
+  // デフォルトはスマホ用レイアウト（2列）
+  grid-template-columns: repeat(2, 1fr);
+
+  /* 画面幅が600px以上の場合、列数を自動調整 */
+  @media (min-width: 360px) {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  }
+
+}

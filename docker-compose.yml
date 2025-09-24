@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: final
+    ports:
+      - "3000:8080"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+  
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=development
+      # - ENVIRONMENT=local_vertex
+      - VERTEX_AI_MOCK=true
+      - GCP_PROJECT_ID=dummy-project
+      - GCP_REGION=asia-northeast1
+    volumes:
+      - ./backend:/app
