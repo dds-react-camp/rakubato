@@ -7,6 +7,7 @@ import { useTypingAnimation } from '../hooks/useTypingAnimation';
 import DescriptionBubble from '../components/battle/DescriptionBubble';
 import loadingVideo from '../assets/loading_battle_1909910201858242239.mp4'; // Import loading video
 import './BattleScreen.scss';
+import placeholderMovie from '../assets/battle-dummy.mp4'; // Import placeholder
 
 const loadingMessages = [
   "さあ、世紀の対決の準備が整いつつあります！AIが両者のデータを徹底分析中...ゴングまであとわずか！",
@@ -82,7 +83,7 @@ const BattleScreen: React.FC = () => {
       <div className="battle-container">
         <DescriptionBubble name={battleProduct.product1_name} description={description1} />
         <div className="video-container">
-          <video ref={videoRef} src={battleProduct.video_url} autoPlay loop muted playsInline />
+          <video ref={videoRef} src={battleProduct.video_url || placeholderMovie} autoPlay loop muted playsInline />
           <button className="play-pause-button" onClick={togglePlay}>
             {isPlaying ? '❚❚' : '▶'}
           </button>

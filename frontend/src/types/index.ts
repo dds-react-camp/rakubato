@@ -84,5 +84,5 @@ export interface BattleProduct {
   product2_id: string;
   product2_name: string;
   product2_description: string[];
-  video_url: string;
+  video_url?: string;
 }

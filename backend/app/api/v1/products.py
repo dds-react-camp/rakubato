@@ -63,7 +63,7 @@ class ProductBattleResponse(BaseModel):
     product2_id: str
     product2_name: str
     product2_description: List[str]
-    video_url: str
+    video_url: Optional[str] = None
 
 
 # --- Dependencies ---

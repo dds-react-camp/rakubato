@@ -1052,7 +1052,7 @@ class AnalyzeNeedsService:
             video_url = video_generation_result.get("gcs_signed_url")
             # Use placeholder if generation fails
             if video_generation_result.get("status") != "success" or not video_url:
-                video_url = "https://storage.googleapis.com/public-dds-react-camp-machu/battle_movies/Fighting_Game_Product_Battle_Video.mp4"
+                video_url = ""
 
             # Add static data and the new video prompt to the response
             final_response = {
